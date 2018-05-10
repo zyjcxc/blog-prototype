@@ -1,4 +1,14 @@
-# Springboot blog系统原型
+# Springboot 博客Master
+
+# Springboot blog系统原型 需求
+1. 用户管理
+2. 安全设置
+3. 博客管理
+4. 评论管理
+5. 点赞管理
+6. 分类管理
+7. 标签管理
+8. 首页搜索
 
 # 用户管理
 
