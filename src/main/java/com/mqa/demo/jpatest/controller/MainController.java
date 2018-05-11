@@ -1,9 +1,13 @@
 package com.mqa.demo.jpatest.controller;
 
 
+import com.mqa.demo.jpatest.domain.User;
+import com.mqa.demo.jpatest.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * 主页控制器
@@ -12,6 +16,9 @@ import org.springframework.web.bind.annotation.GetMapping;
  **/
 @Controller
 public class MainController {
+
+    @Autowired
+    private IUserService userService;
 
     @GetMapping("/")
     public String root() {
@@ -35,9 +42,26 @@ public class MainController {
         return "login";
     }
 
+    /**
+     * 获取注册页面
+     * @return
+     */
     @GetMapping("/register")
     public String register() {
         return "register";
     }
+
+    /**
+     * 注册用户
+     * @return
+     */
+    @PostMapping("/register")
+    public String register(User user) {
+        userService.registerUser(user);
+        return "redirect:/login";
+    }
+
+
+
 }
 

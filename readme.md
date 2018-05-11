@@ -30,4 +30,8 @@
     * /users : POST 保存用户
     * /users/{id} : DELETE 删除用户
     * /users/edit/{id} : GET 获取某个用户的编辑界面
-    
+
+* 修改实体，加字段，Bean属性上加验证
+* 新增Controller，新增UserService接口
+* 新增users/add, edit, list页面
+* 实现了博客系统的用户管理（/admins）
