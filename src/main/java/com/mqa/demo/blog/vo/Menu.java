@@ -1,4 +1,4 @@
-package com.mqa.demo.jpatest.vo;
+package com.mqa.demo.blog.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

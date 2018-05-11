@@ -1,6 +1,6 @@
-package com.mqa.demo.jpatest.dao;
+package com.mqa.demo.blog.dao;
 
-import com.mqa.demo.jpatest.domain.User;
+import com.mqa.demo.blog.domain.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

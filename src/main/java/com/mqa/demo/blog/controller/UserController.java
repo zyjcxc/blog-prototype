@@ -1,11 +1,11 @@
-package com.mqa.demo.jpatest.controller;
+package com.mqa.demo.blog.controller;
 
-import com.mqa.demo.jpatest.domain.Authority;
-import com.mqa.demo.jpatest.domain.User;
-import com.mqa.demo.jpatest.service.IAuthorityService;
-import com.mqa.demo.jpatest.service.IUserService;
-import com.mqa.demo.jpatest.util.ConstraintViolationExcepitonHanlder;
-import com.mqa.demo.jpatest.vo.Response;
+import com.mqa.demo.blog.domain.Authority;
+import com.mqa.demo.blog.domain.User;
+import com.mqa.demo.blog.service.IAuthorityService;
+import com.mqa.demo.blog.service.IUserService;
+import com.mqa.demo.blog.util.ConstraintViolationExcepitonHanlder;
+import com.mqa.demo.blog.vo.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

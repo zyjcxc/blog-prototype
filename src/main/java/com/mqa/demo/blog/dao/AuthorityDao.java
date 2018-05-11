@@ -1,6 +1,6 @@
-package com.mqa.demo.jpatest.dao;
+package com.mqa.demo.blog.dao;
 
-import com.mqa.demo.jpatest.domain.Authority;
+import com.mqa.demo.blog.domain.Authority;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

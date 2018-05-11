@@ -1,4 +1,4 @@
-package com.mqa.demo.jpatest.config;
+package com.mqa.demo.blog.config;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;

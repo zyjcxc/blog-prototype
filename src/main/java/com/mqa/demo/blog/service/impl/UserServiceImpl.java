@@ -1,8 +1,8 @@
-package com.mqa.demo.jpatest.service.impl;
+package com.mqa.demo.blog.service.impl;
 
-import com.mqa.demo.jpatest.dao.UserDao;
-import com.mqa.demo.jpatest.domain.User;
-import com.mqa.demo.jpatest.service.IUserService;
+import com.mqa.demo.blog.dao.UserDao;
+import com.mqa.demo.blog.domain.User;
+import com.mqa.demo.blog.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

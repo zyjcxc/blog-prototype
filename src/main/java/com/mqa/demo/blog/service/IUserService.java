@@ -1,6 +1,6 @@
-package com.mqa.demo.jpatest.service;
+package com.mqa.demo.blog.service;
 
-import com.mqa.demo.jpatest.domain.User;
+import com.mqa.demo.blog.domain.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
