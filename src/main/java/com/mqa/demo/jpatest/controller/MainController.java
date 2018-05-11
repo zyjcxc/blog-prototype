@@ -1,13 +1,18 @@
 package com.mqa.demo.jpatest.controller;
 
 
+import com.mqa.demo.jpatest.domain.Authority;
 import com.mqa.demo.jpatest.domain.User;
+import com.mqa.demo.jpatest.service.IAuthorityService;
 import com.mqa.demo.jpatest.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 主页控制器
@@ -17,8 +22,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class MainController {
 
+    private static final Long ROLE_USER_AUTHORITY_ID = 2L;
+
     @Autowired
     private IUserService userService;
+
+    @Autowired
+    private IAuthorityService authorityService;
 
     @GetMapping("/")
     public String root() {
@@ -57,6 +67,11 @@ public class MainController {
      */
     @PostMapping("/register")
     public String register(User user) {
+        // 将权限保存到用户相关表
+        List<Authority> authorities = new ArrayList<>();
+        authorities.add(authorityService.getAuthorityById(ROLE_USER_AUTHORITY_ID));
+        user.setAuthorities(authorities);
+        user.setEncodePassword(user.getPassword());
         userService.registerUser(user);
         return "redirect:/login";
     }

@@ -1,6 +1,8 @@
 package com.mqa.demo.jpatest.controller;
 
+import com.mqa.demo.jpatest.domain.Authority;
 import com.mqa.demo.jpatest.domain.User;
+import com.mqa.demo.jpatest.service.IAuthorityService;
 import com.mqa.demo.jpatest.service.IUserService;
 import com.mqa.demo.jpatest.util.ConstraintViolationExcepitonHanlder;
 import com.mqa.demo.jpatest.vo.Response;
@@ -9,11 +11,15 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.ConstraintViolationException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -26,6 +32,9 @@ public class UserController {
 
     @Autowired
     private IUserService userService;
+
+    @Autowired
+    private IAuthorityService authorityService;
 
     /**
      * 查询所有用户列表
@@ -74,7 +83,29 @@ public class UserController {
      * @return
      */
     @PostMapping
-    public ResponseEntity<Response> create(User user) {
+    public ResponseEntity<Response> saveOrUpdate(User user, Long authorityId) {
+        // 将权限保存到用户相关表
+        List<Authority> authorities = new ArrayList<>();
+        authorities.add(authorityService.getAuthorityById(authorityId));
+        user.setAuthorities(authorities);
+
+        // 密码加密
+        if (user.getId() == null) {
+            user.setEncodePassword(user.getPassword());
+        } else {
+            // 判断密码是否做了变更
+            User originalUser = userService.getUserById(user.getId());
+            String rawPassword = originalUser.getPassword();
+            PasswordEncoder encoder = new BCryptPasswordEncoder();
+            String encodePasswd = encoder.encode(user.getPassword());
+            boolean isMatch = encoder.matches(rawPassword, encodePasswd);
+            if (!isMatch) {
+                user.setEncodePassword(user.getPassword());
+            }else {
+                user.setPassword(user.getPassword());
+            }
+        }
+
         try {
             user = userService.saveUser(user);
         } catch (ConstraintViolationException e) {
@@ -104,7 +135,7 @@ public class UserController {
     @GetMapping("/modify/{id}")
     public ModelAndView modify(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", userService.getUserById(id));
-        return new ModelAndView("users/add", "userModel", model);
+        return new ModelAndView("users/edit", "userModel", model);
     }
 
 
