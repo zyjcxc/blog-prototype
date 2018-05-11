@@ -1,7 +1,7 @@
-package com.mqa.demo.jpatest.controller;
+package com.mqa.demo.blog.controller;
 
-import com.mqa.demo.jpatest.dao.UserDao;
-import com.mqa.demo.jpatest.domain.User;
+import com.mqa.demo.blog.dao.UserDao;
+import com.mqa.demo.blog.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
