@@ -1,7 +1,7 @@
-package com.mqa.demo.jpatest.controller;
+package com.mqa.demo.blog.controller;
 
 
-import com.mqa.demo.jpatest.vo.Menu;
+import com.mqa.demo.blog.vo.Menu;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

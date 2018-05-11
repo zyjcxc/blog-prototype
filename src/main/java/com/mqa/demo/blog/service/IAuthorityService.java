@@ -1,6 +1,6 @@
-package com.mqa.demo.jpatest.service;
+package com.mqa.demo.blog.service;
 
-import com.mqa.demo.jpatest.domain.Authority;
+import com.mqa.demo.blog.domain.Authority;
 
 
 /**

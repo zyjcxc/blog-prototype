@@ -1,4 +1,4 @@
-package com.mqa.demo.jpatest.controller;
+package com.mqa.demo.blog.controller;
 
 
 import org.springframework.stereotype.Controller;

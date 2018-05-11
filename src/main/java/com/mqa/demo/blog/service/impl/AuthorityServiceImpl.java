@@ -1,8 +1,8 @@
-package com.mqa.demo.jpatest.service.impl;
+package com.mqa.demo.blog.service.impl;
 
-import com.mqa.demo.jpatest.dao.AuthorityDao;
-import com.mqa.demo.jpatest.domain.Authority;
-import com.mqa.demo.jpatest.service.IAuthorityService;
+import com.mqa.demo.blog.dao.AuthorityDao;
+import com.mqa.demo.blog.domain.Authority;
+import com.mqa.demo.blog.service.IAuthorityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
