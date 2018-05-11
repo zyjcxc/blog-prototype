@@ -1,4 +1,4 @@
-package com.mqa.demo.jpatest.util;
+package com.mqa.demo.blog.util;
 
 import org.apache.tomcat.util.buf.StringUtils;
 

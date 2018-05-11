@@ -1,4 +1,4 @@
-package com.mqa.demo.jpatest;
+package com.mqa.demo.blog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

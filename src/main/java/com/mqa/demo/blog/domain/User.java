@@ -1,4 +1,4 @@
-package com.mqa.demo.jpatest.domain;
+package com.mqa.demo.blog.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
